@@ -8,64 +8,64 @@ const playlist = {
   hots: [{
     title: 'Summer Vibes',
     followersCount: '1,300,231',
-    cover: 'https://picsum.photos/200'
+    cover: 'https://loremflickr.com/320/240/music,summer,beach/all/?random='
   }, {
     title: 'Rap Zone',
     followersCount: '650,231',
-    cover: 'https://picsum.photos/200'
+    cover: 'https://loremflickr.com/320/240/music,summer,beach/all/?random='
   }, {
     title: 'Rap Zone',
     followersCount: '650,231',
-    cover: 'https://picsum.photos/200'
+    cover: 'https://loremflickr.com/320/240/music,summer,beach/all/?random='
   }, {
     title: 'Rap Zone',
     followersCount: '650,231',
-    cover: 'https://picsum.photos/200'
+    cover: 'https://loremflickr.com/320/240/music,summer,beach/all/?random='
   }, {
     title: 'Rap Zone',
     followersCount: '650,231',
-    cover: 'https://picsum.photos/200'
+    cover: 'https://loremflickr.com/320/240/music,summer,beach/all/?random='
   }, {
     title: 'Rap Zone',
     followersCount: '650,231',
-    cover: 'https://picsum.photos/200'
+    cover: 'https://loremflickr.com/320/240/music,summer,beach/all/?random='
   }, {
     title: 'Rap Zone',
     followersCount: '650,231',
-    cover: 'https://picsum.photos/200'
+    cover: 'https://loremflickr.com/320/240/music,summer,beach/all/?random='
   }, {
     title: 'Rap Zone',
     followersCount: '650,231',
-    cover: 'https://picsum.photos/200'
+    cover: 'https://loremflickr.com/320/240/music,summer,beach/all/?random='
   }],
   mood: [{
     title: 'Shower Time',
     followersCount: '1,300,231',
-    cover: 'https://picsum.photos/200'
+    cover: 'https://loremflickr.com/320/240/music,summer,beach/all/?random='
   }, {
     title: 'Old School',
     followersCount: '300,231',
-    cover: 'https://picsum.photos/200'
+    cover: 'https://loremflickr.com/320/240/music,summer,beach/all/?random='
   }, {
     title: 'Old School',
     followersCount: '300,231',
-    cover: 'https://picsum.photos/200'
+    cover: 'https://loremflickr.com/320/240/music,summer,beach/all/?random='
   }, {
     title: 'Old School',
     followersCount: '300,231',
-    cover: 'https://picsum.photos/200'
+    cover: 'https://loremflickr.com/320/240/music,summer,beach/all/?random='
   }, {
     title: 'Old School',
     followersCount: '300,231',
-    cover: 'https://picsum.photos/200'
+    cover: 'https://loremflickr.com/320/240/music,summer,beach/all/?random='
   }, {
     title: 'Old School',
     followersCount: '300,231',
-    cover: 'https://picsum.photos/200'
+    cover: 'https://loremflickr.com/320/240/music,summer,beach/all/?random='
   }, {
     title: 'Old School',
     followersCount: '300,231',
-    cover: 'https://picsum.photos/200'
+    cover: 'https://loremflickr.com/320/240/music,summer,beach/all/?random='
   }]
 }
 
@@ -89,7 +89,7 @@ class PlayList extends React.Component {
 const playListStyles = StyleSheet.create({
   container: {
     width: 150,
-    marginRight: 20
+    marginLeft: 25
   },
   cover: {
     width: 150,
@@ -97,7 +97,12 @@ const playListStyles = StyleSheet.create({
     paddingHorizontal: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 5
+    marginBottom: 5,
+    elevation:4,
+    shadowOpacity: 0.75,
+    shadowRadius: 5,
+    shadowColor: 'red',
+    shadowOffset: { height: 0, width: 0 },
   },
   coverRadius: {
     borderRadius: 6
@@ -143,7 +148,7 @@ class Section extends React.Component {
                 return (
                   <PlayList
                     key={index}
-                    cover={item.cover}
+                    cover={item.cover + Math.random().toString(36).substr(2)}
                     title={item.title}
                     followersCount={item.followersCount}
                   />
@@ -173,7 +178,8 @@ const sectionStyles = StyleSheet.create({
     width,
   },
   scrollView: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginRight: 25
   }
 })
 
